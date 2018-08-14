@@ -1,20 +1,24 @@
 /*eslint-disable no-unused-vars */
 import React, { Component, PropTypes } from 'react'
 
-const Counter = ({ value, onIncrement, onDecrement }) =>
-      <div>
-        <button onClick={onIncrement}>
-          Increment
+const Counter = ({ value, onIncrement, onDecrement, onIncrementAsync }) =>
+  <div>
+    <button onClick={onIncrementAsync}>
+      Increment after 1 second
+    </button>
+    {' '}
+    <button onClick={onIncrement}>
+      Increment
         </button>
-        {' '}
-        <button onClick={onDecrement}>
-          Decrement
+    {' '}
+    <button onClick={onDecrement}>
+      Decrement
         </button>
-        <hr />
-        <div>
-          Clicked: {value} times
+    <hr />
+    <div>
+      Clicked: {value} times
         </div>
-      </div>
+  </div>
 
 Counter.propTypes = {
   value: PropTypes.number.isRequired,
